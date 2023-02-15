@@ -2,7 +2,7 @@
 
 ## Objective 
 
-This project stablishes a data processing and modeling pipeline for predicting house prices in England. 
+This project establishes a data processing and modeling pipeline for predicting house prices in England. 
 The data is publicly available at the following Kaggle link. 
 
 https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
