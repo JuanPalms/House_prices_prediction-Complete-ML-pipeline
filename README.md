@@ -10,14 +10,23 @@ https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
 ## Repository structure
 
 Refactoring project
+
 ├── config.yaml
+
 ├── data
+
 │   ├── predictions
+
 │   │   └── predictions.csv
+
 │   ├── raw
+
 │   │   ├── test.csv
+
 │   │   └── train.csv
+
 │   └── transformer
+
 │       └── preprocessor.pkl
 ├── __init__.py
 ├── logs
