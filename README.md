@@ -28,24 +28,42 @@ Refactoring project
 │   └── transformer
 
 │       └── preprocessor.pkl
+
 ├── __init__.py
+
 ├── logs
+
 │   └── results.log
+
 ├── models
+
 │   ├── best_model_params.pkl
+
 │   └── gs_bestmodel.pkl
+
 ├── notebooks
+
 │   └── Data_Exploration.ipynb
+
 ├── README.md
+
 ├── requirements.txt
+
 ├── src
+
 │   ├── predictions.py
+
 │   ├── __pycache__
+
 │   │   └── utility.cpython-310.pyc
+
 │   ├── training_processing.py
+
 │   └── utility.py
+
 └── tests
     └── test_training.py
+
 
 
 
