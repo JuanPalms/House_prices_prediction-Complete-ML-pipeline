@@ -9,7 +9,7 @@ https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
 
 ## Repository structure
 
-palmeros_tarea05
+Refactoring project
 ├── config.yaml
 ├── data
 │   ├── predictions
@@ -31,10 +31,13 @@ palmeros_tarea05
 ├── requirements.txt
 ├── src
 │   ├── predictions.py
+│   ├── __pycache__
+│   │   └── utility.cpython-310.pyc
 │   ├── training_processing.py
 │   └── utility.py
 └── tests
     └── test_training.py
+
 
 
 
