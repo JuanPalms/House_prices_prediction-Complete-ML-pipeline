@@ -13,6 +13,7 @@ from sklearn.model_selection import GridSearchCV
 import yaml
 from utility import column_names_refact,impute_missing_drop_columns,clip_outliers, drop_columns, load_config
 import argparse
+import logging
 
 # Load config file calling load_config function
 config_f = load_config("config.yaml")
@@ -24,6 +25,13 @@ parser = argparse.ArgumentParser(
     description="Training script with cross fold validation")
 parser.add_argument('folds', type=int)
 args = parser.parse_args()
+
+#configuration of loggins
+logging.basicConfig(
+    filename=os.path.join(config_f["log_directory"], config_f["log_file"]),
+    level=logging.INFO,
+    filemode='w',
+    format='%(name)s - %(levelname)s - %(message)s')
 
 
 ################ PREPROCESSING TRAIN DATA

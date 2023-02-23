@@ -1,12 +1,13 @@
 #### INITIAL SETTINGS
 
-# 1) PATHS
+# 1) DIRECTORIES
 data_directory: ../data
 raw_data: /raw
 clean_data: /clean
 predictions_data: /predictions
 preprocessor_directory: ../data/transformer/
 models_directory: ../models/
+log_directory: ../logs
 
 # 2) DATA
 data_clean_train: clean_train.csv
@@ -37,3 +38,5 @@ gs_best_model_name: gs_bestmodel.pkl
 # 4) RESULTS
 predictions: predictions.csv
 
+# 5) LOGGING
+log_file: results.log
