@@ -3,11 +3,13 @@
 # 1) PATHS
 data_directory: ../data
 raw_data: /raw
+clean_data: /clean
 predictions_data: /predictions
 preprocessor_directory: ../data/transformer/
 models_directory: ../models/
 
 # 2) DATA
+data_clean: clean.csv
 data_train: train.csv
 data_test: test.csv
 target_name: SalePrice
