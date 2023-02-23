@@ -9,10 +9,10 @@ preprocessor_directory: ../data/transformer/
 models_directory: ../models/
 
 # 2) DATA
-data_clean: clean.csv
+data_clean_train: clean_train.csv
 data_train: train.csv
 data_test: test.csv
-target_name: SalePrice
+target_name: saleprice
 numerical: ["LotFrontage","LotArea","OverallQual","OverallCond","YearBuilt","YearRemodAdd",
             "MasVnrArea","BsmtFinSF1","BsmtFinSF2","BsmtUnfSF","TotalBsmtSF","1stFlrSF",
             "2ndFlrSF","LowQualFinSF","GrLivArea","BsmtFullBath","BsmtHalfBath","FullBath",

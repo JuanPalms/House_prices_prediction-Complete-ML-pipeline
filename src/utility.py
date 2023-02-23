@@ -1,4 +1,5 @@
 """
+Utility module:
 Module that defines functions used in the preprocessing steps of a data science
 project
 """

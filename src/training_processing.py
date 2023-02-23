@@ -27,31 +27,36 @@ args = parser.parse_args()
 
 
 ################ PREPROCESSING TRAIN DATA
-# Load data
-df=pd.read_csv(os.path.join(config_f["data_directory"]+config_f["raw_data"],config_f["data_train"]))
+# 1) Load clean 
+
+df=pd.read_csv(os.path.join(config_f["data_directory"]+config_f["clean_data"],config_f["data_clean_train"]))
 
 # Define X (independent variables) and y (target variable)
 y = df[config_f["target_name"]]
 # Drop target variable from df to be processed
 df = df.drop(config_f["target_name"], axis=1)
 
+#Load modified numerical names after cleaning process
+with open(os.path.join(config_f["data_directory"]+config_f["clean_data"],'numerical.txt'),'r') as numericas:
+    nums = numericas.readlines()
+numerical=[]
+for l in nums:
+    n_list= l.split(",")
+    numerical.append(n_list)
+numerical=numerical[0]
+numerical = numerical[:-1]
 
-#Preprocessing
-#1) Performs column name refactoring (lowercases cols name and eliminates spaces in the col names).
-df,numerical,nominal,to_drop=column_names_refact(
-    df,config_f["numerical"],config_f["nominal"],config_f["to_drop"])
+#Load modified nominal names after cleaning process
+with open(os.path.join(config_f["data_directory"]+config_f["clean_data"],'nominal.txt'),'r') as nominales:
+    noms = nominales.readlines()
+nominal=[]
+for l in noms:
+    n_list= l.split(",")
+    nominal.append(n_list)
+nominal=nominal[0]
+nominal = nominal[:-1]
 
-#2) Drop unwanted columns=
-df=drop_columns(df,to_drop)
 
-#2)Drops cols with more than .3 of Nans and replaces with median or mode Nans
-#of columns with less than .3 of Nans.
-df,numerical,nominal=impute_missing_drop_columns(df, numerical,nominal)
-df=clip_outliers(df,numerical)
-
-#Send clean data before procesing to folder
-
-df.to_csv(os.path.join(config_f["data_directory"]+config_f["clean_data"],config_f["data_clean"]))
 
 #3) transformers for nominal attributes
 nominal_transformer = Pipeline(
