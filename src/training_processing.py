@@ -49,6 +49,10 @@ df=drop_columns(df,to_drop)
 df,numerical,nominal=impute_missing_drop_columns(df, numerical,nominal)
 df=clip_outliers(df,numerical)
 
+#Send clean data before procesing to folder
+
+df.to_csv(os.path.join(config_f["data_directory"]+config_f["clean_data"],config_f["data_clean"]))
+
 #3) transformers for nominal attributes
 nominal_transformer = Pipeline(
     steps=[("encoder", OneHotEncoder(handle_unknown="ignore"))])
